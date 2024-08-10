@@ -1,0 +1,36 @@
+Task 2: Displaying current date,time ,year and day 
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+<meta charset="UTF-8"> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+<title>Date TIme</title> 
+<script> 
+function day(){ 
+var dt= new Date(); 
+var days=["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]; 
+var dy=days[dt.getDay()]; 
+var date=dt.getDate(); 
+var mth=dt.getMonth(); 
+var month=["January", "Feburary", "March", "April", "May", "June", "july", "August"]; 
+var curmth=month[dt.getMonth()]; 
+var year=dt.getFullYear(); 
+document.getElementById("day").innerHTML=dy+", "+date + " "+curmth + " "+year; 
+} 
+function curtime(){ 
+setInterval(timestamp, 1000); 
+} 
+function timestamp(){ 
+var dtc=new Date(); 
+hh=dtc.getHours(); 
+mm=dtc.getMinutes(); 
+ss=dtc.getSeconds(); 
+document.getElementById("timeer").innerHTML=hh+":"+mm+":"+ss; 
+} 
+</script> 
+</head> 
+<body onload="day(), curtime()"> 
+<div id="day"></div> 
+<div id="timeer"></div> 
+</body> 
+</html> 
